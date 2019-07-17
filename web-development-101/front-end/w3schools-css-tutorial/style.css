@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+  color: lightblue;
+  background-color: DodgerBlue;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  margin: 25px 750px;
+}
+
+h2 {
+  color: blue;
+  padding-bottom: 20px;
+}
+
+body {
+    background-color: lightblue;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+img {
+  box-shadow: 10px 10px 5px grey;
+  border: 2px;
+  border-style: solid;
+  border-radius: 15%;
+}
+
+p {
+  padding-left: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}

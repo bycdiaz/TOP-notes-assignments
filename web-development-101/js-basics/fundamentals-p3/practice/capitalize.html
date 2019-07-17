@@ -1,0 +1,34 @@
+<!--
+Write a function called capitalize that takes a string and returns that string
+with only the first letter capitalized. Make sure that it can take strings that
+are lowercase, UPPERCASE or BoTh.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            let enteredString = prompt('Enter string for first letter capitalization:')
+
+            let capitalize = function(x) {
+
+            // make record of 1st character
+            let firstChar = x.slice(0,1)
+
+            // capitalize first character
+            let firstCharCaps = firstChar.toUpperCase()
+
+            // add first capitalized character to original string
+            let firstCharCapsString = firstCharCaps + x.slice(1)
+
+            return firstCharCapsString
+            }
+            alert(capitalize(enteredString));
+        </script>
+    </body>
+</html>

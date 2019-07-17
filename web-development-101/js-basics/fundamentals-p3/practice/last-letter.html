@@ -1,0 +1,25 @@
+<!--
+Write a function called lastLetter that takes a string and returns the very last
+letter of that string:
+lastLetter("abcd") should return "d"
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // string input
+            let enteredString = prompt('Please enter your string:')
+
+            let lastLetter = function(x) {
+                return x.slice(-1)
+            }
+            alert(lastLetter(enteredString))
+
+        </script>
+    </body>
+</html>

@@ -5,7 +5,7 @@ get "/" do
   "OMG, hello Ruby Monstas!"
 end
 
-get "/monstas/:name" do
+get "/monstas" do
   @name = params["name"]
   erb :monstas
 end

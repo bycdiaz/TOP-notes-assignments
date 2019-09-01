@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'erb'
 
+enable :sessions
+
 get "/" do
   "OMG, hello Ruby Monstas!"
 end
@@ -16,10 +18,50 @@ def read_names
   File.read("names.txt").split("\n")
 end
 
-
 get "/monstas" do
+  @message = session.delete(:message)
   @name = params["name"]
   @names = read_names
-  store_name("names.txt", @name)
   erb :monstas
+end
+
+class NameValidator
+  def initialize(name, names)
+    @name = name.to_s
+    @names = names
+  end
+
+  def valid?
+    validate
+    @message.nil?
+  end
+
+  def message
+    @message
+  end
+
+  private
+
+    def validate
+      if @name.empty?
+        @message = "You need to enter a name."
+      elsif @names.include?(@name)
+        @message = "#{@name} is already included in our list."
+      end
+    end
+end
+
+post "/monstas" do
+  @name = params["name"]
+  @names = read_names
+  validator = NameValidator.new(@name, @names)
+
+  if validator.valid?
+    store_name("names.txt", @name)
+    session[:message] = "Successfully stored the name #{@name}."
+    redirect "/monstas?name=#{@name}"
+  else
+    @message = validator.message
+    erb :monstas
+  end
 end

@@ -1,5 +1,8 @@
+require 'sass'
 require 'sinatra'
 require 'sinatra/reloader' if development?
+
+get('/styles.css'){ scss :styles }
 
 get '/' do
   @title = "Welcome!"

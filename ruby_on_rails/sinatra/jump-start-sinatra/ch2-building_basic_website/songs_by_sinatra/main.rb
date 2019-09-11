@@ -6,20 +6,20 @@ get('/styles.css'){ scss :styles }
 
 get '/' do
   @title = "Welcome!"
-  erb :home
+  slim :home
 end
 
 get '/about' do
   @title = "All About This Website"
-  erb :about
+  slim :about
 end
 
 get '/contact' do
   @title = "Write us!"
-  erb :contact
+  slim :contact
 end
 
 not_found do
   @title = "Whoops!"
-  erb :not_found
+  slim :not_found
 end

@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
@@ -58,15 +58,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  dm-core
-  dm-migrations
-  dm-postgres-adapter
-  dm-sqlite-adapter
-  pg
-  sass
-  sinatra
-  slim
-  thin
+  dm-core!
+  dm-migrations!
+  dm-postgres-adapter!
+  dm-sqlite-adapter!
+  pg!
+  sass!
+  sinatra!
+  slim!
+  thin!
 
 BUNDLED WITH
    2.0.2
